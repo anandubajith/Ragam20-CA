@@ -4,7 +4,7 @@
     <div class="columns is-centered">
       <div class="column is-5-tablet is-5-desktop is-4-widescreen">
         <div class="box">
-          <!-- <img src="../assets/nss-nitc.jpg" alt=""> -->
+          <img src="../assets/logo.png" style="width:200px" alt="Ragam Logo">
           <b-field label="Email">
             <b-input placeholder="eg. anandu_b180288cs@nitc.ac.in"
             type="email"

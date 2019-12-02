@@ -313,8 +313,7 @@ export default {
       db.ref(`ambassadors/${this.$route.params.id}/posters/`)
         .update({
           [key]: value,
-        })
-        .then(console.log('hi'));
+        });
     },
     updatePoints(value, reason) {
       db.ref(`points/${this.$route.params.id}`).push({

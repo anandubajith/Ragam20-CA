@@ -1,26 +1,26 @@
 {
   "rules": {
     "ambassadors": {
-      ".read": "(auth.uid === 'ZZ4xRra2CWR8RbQ0hXzgwaDyVg92')",
-      ".write": "auth.uid === 'ZZ4xRra2CWR8RbQ0hXzgwaDyVg92'",
+      ".read": "(auth.uid === 'FLXS7v3xAXbfIZbz6iQ6EOZDtZQ2')",
+      ".write": "auth.uid === 'FLXS7v3xAXbfIZbz6iQ6EOZDtZQ2'",
       "$uid": {
-        ".read": "(auth.uid === 'ZZ4xRra2CWR8RbQ0hXzgwaDyVg92') || ($uid === auth.uid)",
-        ".write": "(auth.uid === 'ZZ4xRra2CWR8RbQ0hXzgwaDyVg92') || ($uid === auth.uid)"
+        ".read": "(auth.uid === 'FLXS7v3xAXbfIZbz6iQ6EOZDtZQ2') || ($uid === auth.uid)",
+        ".write": "(auth.uid === 'FLXS7v3xAXbfIZbz6iQ6EOZDtZQ2') || ($uid === auth.uid)"
       }
     },
     "points": {
       "$uid": {
-        ".read": "(auth.uid === 'ZZ4xRra2CWR8RbQ0hXzgwaDyVg92') || ($uid === auth.uid)",
-        ".write": "auth.uid === 'ZZ4xRra2CWR8RbQ0hXzgwaDyVg92'"
+        ".read": "(auth.uid === 'FLXS7v3xAXbfIZbz6iQ6EOZDtZQ2') || ($uid === auth.uid)",
+        ".write": "auth.uid === 'FLXS7v3xAXbfIZbz6iQ6EOZDtZQ2'"
       }
     },
     "tasks": {
       ".read": "auth.uid != null",
-      ".write": "auth.uid === 'ZZ4xRra2CWR8RbQ0hXzgwaDyVg92'"
+      ".write": "auth.uid === 'FLXS7v3xAXbfIZbz6iQ6EOZDtZQ2'"
     },
     "notification": {
       ".read": true,
-      ".write": "auth.uid === 'ZZ4xRra2CWR8RbQ0hXzgwaDyVg92'"
+      ".write": "auth.uid === 'FLXS7v3xAXbfIZbz6iQ6EOZDtZQ2'"
     },
     "leaderboard": {
       ".read": true,
