@@ -1,0 +1,13 @@
+{
+  "name": "ragam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy-admin": "cd ragam-admin && yarn build && cd .. && firebase deploy --only hosting:ragam-admin",
+    "deploy-ca": "cd ragam-ca && yarn build && cd .. && firebase deploy --only hosting:ragam-ca"
+  },
+  "author": "",
+  "license": "ISC"
+}

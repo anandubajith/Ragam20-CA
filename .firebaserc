@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "ragam-ca"
+  },
+  "targets": {
+    "ragam-ca": {
+      "hosting": {
+        "ragam-admin": [
+          "ragam-admin"
+        ],
+        "ragam-ca": [
+          "ragam-ca"
+        ]
+      }
+    }
+  }
+}

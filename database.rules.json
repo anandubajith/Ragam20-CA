@@ -1,0 +1,30 @@
+{
+  "rules": {
+    "ambassadors": {
+      ".read": "(auth.uid === 'ZZ4xRra2CWR8RbQ0hXzgwaDyVg92')",
+      ".write": "auth.uid === 'ZZ4xRra2CWR8RbQ0hXzgwaDyVg92'",
+      "$uid": {
+        ".read": "(auth.uid === 'ZZ4xRra2CWR8RbQ0hXzgwaDyVg92') || ($uid === auth.uid)",
+        ".write": "(auth.uid === 'ZZ4xRra2CWR8RbQ0hXzgwaDyVg92') || ($uid === auth.uid)"
+      }
+    },
+    "points": {
+      "$uid": {
+        ".read": "(auth.uid === 'ZZ4xRra2CWR8RbQ0hXzgwaDyVg92') || ($uid === auth.uid)",
+        ".write": "auth.uid === 'ZZ4xRra2CWR8RbQ0hXzgwaDyVg92'"
+      }
+    },
+    "tasks": {
+      ".read": "auth.uid != null",
+      ".write": "auth.uid === 'ZZ4xRra2CWR8RbQ0hXzgwaDyVg92'"
+    },
+    "notification": {
+      ".read": true,
+      ".write": "auth.uid === 'ZZ4xRra2CWR8RbQ0hXzgwaDyVg92'"
+    },
+    "leaderboard": {
+      ".read": true,
+      ".write": false
+    }
+  }
+}
