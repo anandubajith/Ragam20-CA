@@ -42,7 +42,7 @@
         <br />
         <b-button
           tag="a"
-          :href="ambassadors.posterURL ? sanitizeURL(ambassadors.posterURL.value): '#'"
+          :href="ambassadors.posterURL ? sanitizeURL(ambassadors.posterURL): '#'"
           target="_blank"
           type="is-primary"
           size="is-large"
@@ -59,7 +59,6 @@
     <div class="columns is-centered">
         <div class="column is-one-quarter is-one-third-tablet is-full-mobile">
            <h3 class="is-size-3">Add Referral</h3>
-
         <hr />
        <form class="form box"   @submit="addReferral" >
            <b-field label="Name">
@@ -217,13 +216,10 @@
 </style>
 
 <script>
-/* eslint-disable */
-import { db, storage } from '../firebase';
-import UploadImages from '../components/UploadImages.vue';
+import { db } from '../firebase';
 
 export default {
   name: 'VerifyCA',
-
   data() {
     return {
       ambassadors: '',
@@ -285,23 +281,23 @@ export default {
     },
     acceptPoster(key) {
       this.$buefy.dialog.prompt({
-        title: 'Award points', 
+        title: 'Award points',
         message: `Enter the total Points to be awarded for <b>${this.posters[key].title}</b>`,
         inputAttrs: {
-            type: 'number',
-            placeholder: `Enter points`,
+          type: 'number',
+          placeholder: 'Enter points',
         },
         trapFocus: true,
-        onConfirm: (value) => this.doAcceptPoster(key, value)
-      })
+        onConfirm: value => this.doAcceptPoster(key, value),
+      });
     },
-    doAcceptPoster(key,value) {
+    doAcceptPoster(key, value) {
       db.ref(`ambassadors/${this.$route.params.id}/posters/`)
         .update({
           [key]: '✔️',
         })
         .then(
-          this.updatePoints(value, `Accepted Poster - ${this.posters[key].title}` )
+          this.updatePoints(value, `Accepted Poster - ${this.posters[key].title}`),
         );
     },
     rejectPoster(id) {
@@ -327,8 +323,8 @@ export default {
       });
     },
     sanitizeURL(url) {
-      if (!/^(?:f|ht)tps?\:\/\//.test(url)) {
-        url = `http://${url}`;
+      if (!/^(?:f|ht)tps?:\/\//.test(url)) {
+        return `http://${url}`;
       }
       return url;
     },
@@ -343,18 +339,17 @@ export default {
           type: this.refType,
           status: 'Accepted',
         }).then(
-            db.ref(`points/${this.$route.params.id}`)
-          .push({
-            reason: `Referral - ${this.refType} - ${this.refName}`,
-            value: this.refPoints[this.refType]
-          })
+          db.ref(`points/${this.$route.params.id}`)
+            .push({
+              reason: `Referral - ${this.refType} - ${this.refName}`,
+              value: this.refPoints[this.refType],
+            }),
         )
-       .then(() => {
+        .then(() => {
           this.loading = false;
           this.refName = null;
           this.refType = null;
         });
-     
     },
   },
   firebase() {
