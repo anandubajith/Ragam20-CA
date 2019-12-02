@@ -2,13 +2,13 @@
 
 ## Stuff to be done
 ### CA Site
-[ ] Redesign to suit to ragam 
-[ ] Refactor CSS
-[ ] Add clipboard back
+- [ ] Redesign to suit to ragam 
+- [ ] Refactor CSS
+- [ ] Add clipboard back
 
 ### Admin Site
-[ ] fix the rejectPoster option
+- [ ] fix the rejectPoster option
 
 ### General
-[ ] Write Documentation
-[ ] Cleanup readme
+- [ ] Write Documentation
+- [ ] Cleanup readme
