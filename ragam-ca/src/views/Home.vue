@@ -8,7 +8,6 @@
         <Badge :points="totalPoints" :position="position"/>
         <router-link to="/leaderboard" class="button">Leaderboard</router-link>
         <a class="logout button" href="#" @click="logout()">Logout</a>
-
       </div>
       <img class="profile" :src="photo" alt />
     </div>
