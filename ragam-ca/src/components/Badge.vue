@@ -35,7 +35,6 @@
   background: #777;
   color: #fff;
   font-weight: bold;
-  animation: glow 3s ease-in-out infinite alternate;
 }
 .gold {
   background-color: #c9b037;
@@ -47,14 +46,7 @@
   background-color: #ad8a56;
   color: #fff;
 }
-@keyframes glow {
-  from {
-    box-shadow: 0 0 10px #eee;
-  }
-  to {
-    box-shadow: 0 0 10px #999;
-  }
-}
+
 </style>
 <script>
 export default {

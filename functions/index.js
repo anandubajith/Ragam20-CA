@@ -4,7 +4,12 @@ const admin = require('firebase-admin');
 admin.initializeApp();
 var db = admin.database();
 
-// Rewrite this to new form, 
+function getPoints( data ) {
+    return Object.values(data).reduce(
+        (total, current) => total + parseInt(current.value, 10), 0,
+    );
+}
+
 exports.leaderboard = functions.database.ref('/points').onWrite(() => {
     return db.ref('ambassadors').on('value', function(snap) {
         let ambassadors = snap.val();
@@ -16,7 +21,7 @@ exports.leaderboard = functions.database.ref('/points').onWrite(() => {
                     if (ambassadors[key] && ambassadors[key].name) {
                         result.push({
                             name: ambassadors[key].name,
-                            point: parseInt(data[key][0], 10),
+                            point: getPoints(data[key]),
                             id: key
                         });
                     }

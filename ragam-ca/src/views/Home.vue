@@ -4,8 +4,8 @@
     <div class="summary">
       <div class="text">
         <h2>{{ userData.name }}</h2>
-        {{ totalPoints }}
         <div>College: {{ userData.college}}</div>
+        <Badge :points="totalPoints" :position="position"/>
         <router-link to="/leaderboard" class="button">Leaderboard</router-link>
         <a class="logout button" href="#" @click="logout()">Logout</a>
 
@@ -152,6 +152,7 @@ hr {
 import firebase from 'firebase/app';
 import 'firebase/database';
 import 'firebase/auth';
+import Badge from '../components/Badge.vue';
 
 export default {
   name: 'DashboardCA',
@@ -170,6 +171,7 @@ export default {
     };
   },
   components: {
+    Badge,
   },
   firebase() {
     const userId = firebase.auth().currentUser.uid;
