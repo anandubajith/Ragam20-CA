@@ -16,7 +16,7 @@
         <p class="large">URL: {{userData.posterURL || '' }}</p>
         <form @submit.prevent="updatePosterURL()">
           <input type="text" placeholder="Enter Google Drive URL here" v-model="posterURL" required>
-          <input type="submit" :value="button" >
+          <input type="submit" value="Submit" >
         </form>
         <h3>Posters</h3>
         <div class="grid">

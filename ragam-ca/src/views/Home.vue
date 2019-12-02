@@ -18,7 +18,6 @@
     </div>
     <hr v-if="notification.message">
     <div class="referral_code" v-if="tasks.referrals && tasks.referrals.active">
-      <br>
       <div class="referral" v-clipboard:copy="userData.ref_id"
               v-clipboard:success="onCopy">
         <h2 style="text-align:center">
