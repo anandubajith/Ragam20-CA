@@ -1,2 +1,1 @@
-TODO
-- fix the rejectPoster option
+This is the admin site
