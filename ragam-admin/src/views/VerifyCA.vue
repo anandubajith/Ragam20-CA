@@ -131,11 +131,11 @@
       </div>
        <h3 class="is-size-3">Points Log</h3>
     <hr />
-     <b-collapse :open="false" aria-id="contentIdForA11y1">
+     <b-collapse :open="false" aria-id="pointUpdateLogToggle">
             <button
                 class="button is-primary"
                 slot="trigger"
-                aria-controls="contentIdForA11y1">View Point update log</button>
+                aria-controls="pointUpdateLogToggle">View Point update log</button>
              <div class="table-container">
       <table class="table is-fullwidth is-striped is-hoverable">
   <thead>
@@ -244,8 +244,6 @@ export default {
   },
   methods: {
     acceptReferral(key, name, type) {
-      // update the user/referall to accepted
-      // updte the points to correct val
       db.ref(`ambassadors/${this.$route.params.id}/referral/${key}`)
         .update({ status: 'Accepted' })
         .then(
