@@ -90,9 +90,9 @@
               <th>{{ person.type }}</th>
               <th>{{person.status}}</th>
               <th class="has-text-centered">
-                <b-button type="is-danger" @click="reject('referral', key, person.type)"
+                <b-button type="is-danger" @click="rejectReferral(key, person.value, person.type)"
                 v-if="person.status === 'Accepted'">Reject</b-button>
-                <b-button type="is-success" @click="accept('referral',key, person.type)"
+                <b-button type="is-success" @click="acceptReferral(key, person.value, person.type)"
                 v-else>Accept</b-button>
               </th>
             </tr>
@@ -145,7 +145,7 @@
     </tr>
   </thead>
    <tr v-for="(point, key ) in points" :key="key">
-      <th>{{point.reason}}</th>
+      <td>{{point.reason}}</td>
       <td>{{point.value}}</td>
     </tr>
       </table>
@@ -243,23 +243,32 @@ export default {
     },
   },
   methods: {
-    accept(ref, id, type) {
-      db.ref(`ambassadors/${this.$route.params.id}/${ref}/${id}`)
-        .update({ status: '✔️' })
-        .then(() => {
-          const delta = this.refPoints[type];
-          const updated = parseInt(this.points[0], 10) + delta;
-          return db.ref(`points/${this.$route.params.id}`).set([updated]);
-        });
+    acceptReferral(key, name, type) {
+      // update the user/referall to accepted
+      // updte the points to correct val
+      db.ref(`ambassadors/${this.$route.params.id}/referral/${key}`)
+        .update({ status: 'Accepted' })
+        .then(
+          db.ref(`points/${this.$route.params.id}/${key}`)
+            .update({ value: this.refPoints[type], reason: `Accepted ${type} referral : ${name}` }),
+        );
     },
-    reject(ref, id, type) {
+    rejectReferral(key, name, type) {
       this.$buefy.dialog.prompt({
-        message: 'Reason for Rejection?',
+        message: 'Reason for rejecting?',
         inputAttrs: {
           placeholder: 'Enter the reason',
         },
-        onConfirm: value => this.doReject(ref, id, type, value),
+        onConfirm: value => this.doRejectReferral(key, name, type, value),
       });
+    },
+    doRejectReferral(key, name, type, reason) {
+      db.ref(`ambassadors/${this.$route.params.id}/referral/${key}`)
+        .update({ status: reason })
+        .then(
+          db.ref(`points/${this.$route.params.id}/${key}`)
+            .update({ value: 0, reason: `Rejected ${type} referral - ${name} : ${reason}` }),
+        );
     },
     doReject(ref, id, type, reason) {
       db.ref(`ambassadors/${this.$route.params.id}/${ref}/${id}`)
@@ -289,8 +298,8 @@ export default {
       db.ref(`ambassadors/${this.$route.params.id}/posters/`)
         .update({ [key]: '✔️' })
         .then(
-          db.ref(`points/${this.$route.params.id}`)
-            .update({ [key]: { value, reason: `Accepted poster: ${this.posters[key].title}` } }),
+          db.ref(`points/${this.$route.params.id}/${key}`)
+            .update({ value, reason: `Accepted poster: ${this.posters[key].title}` }),
         );
     },
     rejectPoster(id) {
@@ -307,8 +316,8 @@ export default {
       db.ref(`ambassadors/${this.$route.params.id}/posters/`)
         .update({ [key]: rejectReason })
         .then(
-          db.ref(`points/${this.$route.params.id}`)
-            .update({ [key]: { value: 0, reason: `Rejected poster: ${this.posters[key].title} - ${rejectReason}` } }),
+          db.ref(`points/${this.$route.params.id}/${key}`)
+            .update({ value: 0, reason: `Rejected poster: ${this.posters[key].title} - ${rejectReason}` }),
         );
     },
     updatePoints(value, reason) {
@@ -326,17 +335,18 @@ export default {
     addReferral(e) {
       e.preventDefault();
       if (this.refName == null || this.refType == null) return;
-
       this.loading = true;
-      db.ref(`ambassadors/${this.$route.params.id}/referral`)
-        .push({
+      const { key } = db.ref(`ambassadors/${this.$route.params.id}/referral`).push();
+      db.ref(`ambassadors/${this.$route.params.id}/referral/${key}`)
+        .update({
           value: this.refName,
           type: this.refType,
           status: 'Accepted',
-        }).then(
-          db.ref(`points/${this.$route.params.id}`)
-            .push({
-              reason: `Referral - ${this.refType} - ${this.refName}`,
+        })
+        .then(
+          db.ref(`points/${this.$route.params.id}/${key}`)
+            .update({
+              reason: `Accepted ${this.refType} referral : ${this.refName}`,
               value: this.refPoints[this.refType],
             }),
         )
