@@ -14,7 +14,6 @@
         <p class="tagline break">
           {{ambassadors.email}}
           <br />
-
           <b>{{ ambassadors.college }}</b>
           {{ ambassadors.branch }}
           {{ambassadors.year + " year"}}
@@ -27,18 +26,8 @@
     </div>
 
     <hr />
-
     <div class="columns is-centered">
       <div class="column is-one-third">
-        <!-- <b-button
-          tag="a"
-          :href="ambassadors.contactURL ? sanitizeURL(ambassadors.contactURL.value): '#'"
-          target="_blank"
-          type="is-primary"
-          size="is-large"
-        >Contacts Link</b-button> -->
-
-        <!-- <br /> -->
         <br />
         <b-button
           tag="a"
@@ -117,29 +106,29 @@
     <hr>
     <div class="columns is-multiline">
       <div class="column is-one-fifth-desktop is-half-tablet is-full-mobile"
-       v-for="(poster, key ) in posters" :key="key">
-        <div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img :src="poster.image" :alt="poster.title">
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-content">
-        <p class="title is-4">
-          {{poster.title}} - {{ambassadors.posters ? ambassadors.posters[key] : '❓'}}
-        </p>
+            v-for="(poster, key ) in posters" :key="key">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img :src="poster.image" :alt="poster.title">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4">
+                    {{poster.title}} - {{ambassadors.posters ? ambassadors.posters[key] : '❓'}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <a class="card-footer-item is-success" @click="acceptPoster(key)">Accept</a>
+              <a class="card-footer-item is-danger" @click="rejectPoster(key)" >Reject</a>
+            </footer>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-    <footer class="card-footer">
-    <a class="card-footer-item is-success" @click="acceptPoster(key)">Accept</a>
-    <a class="card-footer-item is-danger" @click="rejectPoster(key)" >Reject</a>
-  </footer>
-</div>
-      </div>
-    </div>
        <h3 class="is-size-3">Points Log</h3>
     <hr />
      <b-collapse :open="false" aria-id="contentIdForA11y1">
@@ -239,6 +228,13 @@ export default {
       },
     };
   },
+  firebase() {
+    return {
+      posters: db.ref('tasks/posters/posters'),
+      points: db.ref(`points/${this.$route.params.id}`),
+      ambassadors: db.ref(`ambassadors/${this.$route.params.id}`),
+    };
+  },
   computed: {
     totalPoints() {
       return Object.values(this.points).reduce(
@@ -249,9 +245,7 @@ export default {
   methods: {
     accept(ref, id, type) {
       db.ref(`ambassadors/${this.$route.params.id}/${ref}/${id}`)
-        .update({
-          status: '✔️',
-        })
+        .update({ status: '✔️' })
         .then(() => {
           const delta = this.refPoints[type];
           const updated = parseInt(this.points[0], 10) + delta;
@@ -281,7 +275,7 @@ export default {
     },
     acceptPoster(key) {
       this.$buefy.dialog.prompt({
-        title: 'Award points',
+        title: 'Accept poster',
         message: `Enter the total Points to be awarded for <b>${this.posters[key].title}</b>`,
         inputAttrs: {
           type: 'number',
@@ -293,27 +287,29 @@ export default {
     },
     doAcceptPoster(key, value) {
       db.ref(`ambassadors/${this.$route.params.id}/posters/`)
-        .update({
-          [key]: '✔️',
-        })
+        .update({ [key]: '✔️' })
         .then(
-          this.updatePoints(value, `Accepted Poster - ${this.posters[key].title}`),
+          db.ref(`points/${this.$route.params.id}`)
+            .update({ [key]: { value, reason: `Accepted poster: ${this.posters[key].title}` } }),
         );
     },
     rejectPoster(id) {
       this.$buefy.dialog.prompt({
-        message: 'Reason for Rejection?',
+        title: 'Reject poster',
+        message: 'Reason for rejecting poster?',
         inputAttrs: {
           placeholder: 'Enter the reason',
         },
-        onConfirm: value => this.doRejectPoster(id, value),
+        onConfirm: rejectReason => this.doRejectPoster(id, rejectReason),
       });
     },
-    doRejectPoster(key, value) {
+    doRejectPoster(key, rejectReason) {
       db.ref(`ambassadors/${this.$route.params.id}/posters/`)
-        .update({
-          [key]: value,
-        });
+        .update({ [key]: rejectReason })
+        .then(
+          db.ref(`points/${this.$route.params.id}`)
+            .update({ [key]: { value: 0, reason: `Rejected poster: ${this.posters[key].title} - ${rejectReason}` } }),
+        );
     },
     updatePoints(value, reason) {
       db.ref(`points/${this.$route.params.id}`).push({
@@ -350,13 +346,6 @@ export default {
           this.refType = null;
         });
     },
-  },
-  firebase() {
-    return {
-      posters: db.ref('tasks/posters/posters'),
-      points: db.ref(`points/${this.$route.params.id}`),
-      ambassadors: db.ref(`ambassadors/${this.$route.params.id}`),
-    };
   },
 };
 </script>

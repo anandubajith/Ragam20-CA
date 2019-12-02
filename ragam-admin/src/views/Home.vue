@@ -81,7 +81,7 @@
              <b-icon
                 icon="settings-outline"
                 size="is-large"
-                type="is-primary">
+                type="is-danger">
             </b-icon>
             </p>
             <p class="subtitle">Config</p>
