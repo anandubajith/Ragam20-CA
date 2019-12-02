@@ -1,6 +1,6 @@
 <template>
 <div id="app">
-  <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <router-link class="navbar-item" to="/home" >
         <h4 class="is-size-3">Ragam CA Admin</h4>
