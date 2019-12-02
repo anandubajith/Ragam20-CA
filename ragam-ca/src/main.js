@@ -3,6 +3,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/analytics';
 import { rtdbPlugin } from 'vuefire';
+import VueClipboard from 'vue-clipboard2';
 
 import App from './App.vue';
 import router from './router';
@@ -23,6 +24,7 @@ firebase.initializeApp({
 firebase.analytics();
 
 Vue.use(rtdbPlugin);
+Vue.use(VueClipboard);
 
 let app = '';
 firebase.auth().onAuthStateChanged(() => {

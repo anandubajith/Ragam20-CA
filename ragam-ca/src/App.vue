@@ -13,7 +13,7 @@
     <footer>
       <router-link to="/about"> About</router-link>
       &middot;
-      <a href="https://publicrelations.tathva.org/contact.html" target="_blank" rel="noopener noreferrer">Contact</a>
+      <a href="http://ragam.org.in/" target="_blank" rel="noopener noreferrer">Contact</a>
     </footer>
   </div>
 </template>

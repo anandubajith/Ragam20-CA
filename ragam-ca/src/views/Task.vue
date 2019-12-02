@@ -204,10 +204,10 @@ export default {
   },
   methods: {
     onCopy() {
-      // alert('Writeup copied');
+      alert('Writeup copied');
     },
     onCopyR() {
-      // alert('Referral code copied');
+      alert('Referral code copied');
     },
     submitFeedback() {
       firebase.database()

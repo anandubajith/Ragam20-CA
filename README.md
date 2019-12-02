@@ -8,6 +8,7 @@
 
 ### Admin Site
 - [ ] fix the rejectPoster option
+- [ ] Write leaderboard function
 
 ### General
 - [ ] Write Documentation

@@ -5,6 +5,8 @@
   "private": true,
   "scripts": {
     "generate-referral-code": "hi",
+    "serve-admin": "cd ragam-admin && yarn serve",
+    "serve-ca": "cd ragam-ca && yarn serve",
     "deploy-admin": "cd ragam-admin && yarn build && cd .. && firebase deploy --only hosting:ragam-admin",
     "deploy-ca": "cd ragam-ca && yarn build && cd .. && firebase deploy --only hosting:ragam-ca",
     "deploy": "firebase deploy"

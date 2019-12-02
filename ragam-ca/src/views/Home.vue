@@ -17,9 +17,10 @@
       {{ notification.message }}
     </div>
     <hr v-if="notification.message">
-    <div class="referral_code" v-if="tasks.referrals.active">
+    <div class="referral_code" v-if="tasks.referrals && tasks.referrals.active">
       <br>
-      <div class="referral" >
+      <div class="referral" v-clipboard:copy="userData.ref_id"
+              v-clipboard:success="onCopy">
         <h2 style="text-align:center">
           <span style="font-weight:normal">Referral Code :</span>
           {{ userData.ref_id }}
@@ -29,16 +30,20 @@
     </div>
     <div class="tasks">
       <h2>Tasks</h2>
-      <router-link class="poster-btn" to="/task/whatsapp" v-if="tasks.whatsapp.active">
+      <router-link class="poster-btn" to="/task/whatsapp"
+                    v-if="tasks.whatsapp && tasks.whatsapp.active">
         Task #1: <b>Join WhatsApp group</b>
       </router-link>
-      <router-link class="poster-btn" to="/task/posters" v-if="tasks.posters.active">
+      <router-link class="poster-btn" to="/task/posters"
+                  v-if="tasks.posters && tasks.posters.active">
         Task #2: <b>Posters</b>
       </router-link>
-      <router-link class="poster-btn" to="/task/referrals" v-if="tasks.referrals.active">
+      <router-link class="poster-btn" to="/task/referrals"
+                  v-if="tasks.referrals && tasks.referrals.active">
         Task #3: <b>Referrals</b>
       </router-link>
-      <router-link class="poster-btn" to="/task/feedback" v-if="tasks.feedback.active">
+      <router-link class="poster-btn" to="/task/feedback"
+                v-if="tasks.feedback && tasks.feedback.active">
         Task #4: <b>Feedback</b>
       </router-link>
     </div>
