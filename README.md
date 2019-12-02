@@ -7,6 +7,7 @@
 
 ### Admin 
 - [ ] icons
+- [ ] linkify
 
 ### General
 - [ ] Write Documentation

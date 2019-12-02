@@ -7,7 +7,7 @@
         <div class="box has-text-centered">
             <p class="title">
              <b-icon
-                icon="account-search"
+                icon="search"
                 size="is-large"
                 type="is-primary">
             </b-icon>
@@ -21,7 +21,7 @@
         <div class="box has-text-centered">
             <p class="title">
              <b-icon
-                icon="format-list-bulleted"
+                icon="cubes"
                 size="is-large"
                 type="is-primary">
             </b-icon>
@@ -37,7 +37,7 @@
         <div class="box has-text-centered">
             <p class="title">
              <b-icon
-                icon="file-image"
+                icon="images"
                 size="is-large"
                 type="is-primary">
             </b-icon>
@@ -51,7 +51,7 @@
         <div class="box has-text-centered">
             <p class="title">
              <b-icon
-                icon="playlist-edit"
+                icon="tasks"
                 size="is-large"
                 type="is-primary">
             </b-icon>
@@ -65,7 +65,7 @@
         <div class="box has-text-centered">
             <p class="title">
              <b-icon
-                icon="clipboard-text"
+                icon="comment"
                 size="is-large"
                 type="is-primary">
             </b-icon>
@@ -79,7 +79,7 @@
         <div class="box has-text-centered">
             <p class="title">
              <b-icon
-                icon="settings-outline"
+                icon="cog"
                 size="is-large"
                 type="is-danger">
             </b-icon>
