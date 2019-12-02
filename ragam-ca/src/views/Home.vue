@@ -218,6 +218,7 @@ export default {
         });
     },
     onCopy() {
+      // eslint-disable-next-line
       alert('Referral Code copied');
     },
   },

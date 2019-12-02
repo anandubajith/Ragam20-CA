@@ -35,6 +35,7 @@ export default {
           this.$router.replace('home');
         })
         .catch((err) => {
+          // eslint-disable-next-line
           alert(`Oops. ${err.message}`);
         });
     },

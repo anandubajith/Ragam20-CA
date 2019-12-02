@@ -204,9 +204,11 @@ export default {
   },
   methods: {
     onCopy() {
+      // eslint-disable-next-line
       alert('Writeup copied');
     },
     onCopyR() {
+      // eslint-disable-next-line
       alert('Referral code copied');
     },
     submitFeedback() {
