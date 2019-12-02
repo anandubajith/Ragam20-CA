@@ -5,6 +5,10 @@
 - [ ] Redesign to suit to ragam 
 - [ ] Refactor CSS
 
+### Admin 
+- [ ] icons
+
 ### General
 - [ ] Write Documentation
 - [ ] Cleanup readme
+ 
