@@ -3,6 +3,7 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 import 'firebase/storage';
 import 'firebase/auth';
+import 'firebase/functions';
 
 
 const app = firebase.initializeApp({
@@ -20,3 +21,4 @@ const app = firebase.initializeApp({
 export const db = app.database();
 export const storage = app.storage();
 export const auth = app.auth();
+export const functions = app.functions();

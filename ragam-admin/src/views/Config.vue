@@ -78,7 +78,9 @@
 </template>
 
 <script>
-import { db } from '../firebase';
+import { db, functions } from '../firebase';
+
+const generateRefIDs = functions.httpsCallable('generateRefIDs');
 
 export default {
   name: 'Config',
@@ -116,6 +118,10 @@ export default {
   methods: {
     toggle(ref, val) {
       db.ref(`tasks/${ref}`).update({ active: val });
+      if (ref === 'referrals' && val) {
+        generateRefIDs()
+          .then(this.$buefy.toast.open('Referral codes generated'));
+      }
     },
     updateNotification() {
       db.ref('notification')
