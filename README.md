@@ -7,9 +7,9 @@ The repository contains three parts
 
 ## Built With
 
-| | |
-|:-----:|:-----|
-|<img width="150" src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-standard.png" alt="Firebase">|<img width="150" src="https://github.com/vuejs/art/raw/master/vue-badge.png" alt="VueJS 2">|
+| | | |
+|:-----:|:-----:|:-----:|
+|<img width="150" src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-standard.png" alt="Firebase">|<img width="150" src="https://github.com/vuejs/art/raw/master/vue-badge.png" alt="VueJS 2">|<img width="150" src="https://bulma.io/images/bulma-logo.png" alt="Bulma Logo">|
 
 ## Stuff to be done
 ### CA Site
