@@ -36,6 +36,7 @@ The repository contains three parts
 ## Deploying
 <details> 
 <summary> View Instructions </summary>
+    
 - Create a new Firebase project
     
 - Setup and configure Firebase using `firebase-cli` as follows
