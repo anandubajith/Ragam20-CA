@@ -42,8 +42,7 @@
           <div class="media-content">
             <div class="content">
               <h3 class="is-size-5">{{ poster.title }}</h3>
-              <p v-html="poster.writeup" >
-
+              <p v-html="poster.writeup"  v-linkified>
               </p>
             </div>
           </div>

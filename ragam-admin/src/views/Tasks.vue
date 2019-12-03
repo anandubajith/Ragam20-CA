@@ -15,8 +15,11 @@
                 </div>
               </div>
               <footer class="card-footer">
-                  <a class="card-footer-item" @click="updateGroupURL()">Update Group URL</a>
+                  <a class="card-footer-item" @click="updateGroupURL()">
+                    <b-icon icon="edit"></b-icon>&nbsp;
+                  Update Group URL</a>
                   <a class="card-footer-item" @click="editEvent('whatsapp', tasks.whatsapp)">
+                    <b-icon icon="edit"></b-icon>&nbsp;
                     Edit Text
                     </a>
                 </footer>
@@ -34,8 +37,11 @@
                   </div>
                 </div>
                 <footer class="card-footer">
-                  <router-link to="/posters" class="card-footer-item">Manage Posters</router-link>
+                  <router-link to="/posters" class="card-footer-item">
+                  <b-icon icon="images"></b-icon>&nbsp;
+                  Manage Posters</router-link>
                   <a class="card-footer-item"  @click="editEvent('posters', tasks.posters)">
+                    <b-icon icon="edit"></b-icon>&nbsp;
                     Edit Text</a>
                 </footer>
               </div>
@@ -55,6 +61,7 @@
                 </div>
                 <footer class="card-footer">
                   <a class="card-footer-item"  @click="editEvent('referrals', tasks.referrals)">
+                    <b-icon icon="edit"></b-icon>&nbsp;
                     Edit Text</a>
                 </footer>
               </div>
@@ -71,8 +78,11 @@
                   </div>
                 </div>
                 <footer class="card-footer">
-                  <router-link to="/feedback" class="card-footer-item">View Feedback</router-link>
+                  <router-link to="/feedback" class="card-footer-item">
+                  <b-icon icon="eye"></b-icon>&nbsp;
+                  View Feedback</router-link>
                   <a class="card-footer-item"  @click="editEvent('feedback', tasks.feedback)">
+                    <b-icon icon="edit"></b-icon>&nbsp;
                     Edit Text
                   </a>
                 </footer>

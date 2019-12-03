@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import { rtdbPlugin } from 'vuefire';
+import linkify from 'vue-linkify';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faEye,
@@ -40,6 +41,7 @@ library.add(faEye, faChevronDown, faTasks, faImages, faCubes, faSearch,
 
 Vue.component('vue-fontawesome', FontAwesomeIcon);
 
+Vue.directive('linkified', linkify);
 Vue.use(rtdbPlugin);
 Vue.use(Buefy, {
   defaultIconComponent: 'vue-fontawesome',
