@@ -45,14 +45,14 @@ The repository contains three parts
     ```
     (this should be pre configured with firebase.json)
 
-- Go to Firebase Project page and add Google , Email and Password as authentication providers
+- Go to Firebase Project page and add Google , Email and Password as authentication providers.
 
-- Create a new user with email and password note the UID ( This will be the admin user )
+- Create a new user with email and password note the UID ( This will be the admin user ).
 
-- Update the new UID in `database.rules.json` and `storage.rules` , ( This is important, Otherwise the admin user won't have permissions update data )
+- Update the new UID in `database.rules.json` and `storage.rules`.( This takes care of permissions )
 
-- Seed the database with `database-seed.json` using Firebase console
+- Seed the database with `database-seed.json` using Firebase console.
 
-- Build and deploy using `yarn deploy`
+- Build and deploy using `yarn deploy`.
 
 </details>
