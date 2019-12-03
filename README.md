@@ -36,7 +36,8 @@ The repository contains three parts
 ## Deploying
 <details> 
 <summary> View Instructions </summary>
-
+- Create a new Firebase project
+    
 - Setup and configure Firebase using `firebase-cli` as follows
     ```
     Hosting Ragam CA            => ragam-ca/dist
@@ -44,6 +45,8 @@ The repository contains three parts
     Firebase Cloud functions    => functions
     ```
     (this should be pre configured with firebase.json)
+
+- Update the Firebase config object in `ragam-admin/src/firebase.js` and `ragam-ca/src/main.js`
 
 - Go to Firebase Project page and add Google , Email and Password as authentication providers.
 
