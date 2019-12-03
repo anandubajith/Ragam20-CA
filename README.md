@@ -44,6 +44,13 @@ The repository contains three parts
     Firebase Cloud functions    => functions
     ```
     (this should be pre configured with firebase.json)
-- Build and deploy the site using `yarn deploy`
+
+- Go to Firebase Project page and add Google , Email and Password as authentication providers
+
+- Create a new user with email and password note the UID ( This will be the admin user )
+
+- Update the new UID in `database.rules.json` and `storage.rules` , ( This is important, Otherwise the admin user won't have permissions update data )
+
+- Build and deploy using `yarn deploy`
 
 </details>
