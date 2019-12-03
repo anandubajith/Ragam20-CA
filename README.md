@@ -51,6 +51,8 @@ The repository contains three parts
 
 - Update the new UID in `database.rules.json` and `storage.rules` , ( This is important, Otherwise the admin user won't have permissions update data )
 
+- Seed the database with `database-seed.json` using Firebase console
+
 - Build and deploy using `yarn deploy`
 
 </details>
