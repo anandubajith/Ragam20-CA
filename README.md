@@ -1,6 +1,5 @@
 # Ragam'20
 
-
 The repository contains three parts
 - The main CA site (/ragam-ca)
 - The Admin site (/ragam-admin)
