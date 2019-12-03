@@ -36,6 +36,7 @@ The repository contains three parts
 ## Deploying
 <details> 
 <summary> View Instructions </summary>
+
 - Setup and configure Firebase using `firebase-cli` as follows
     ```
     Hosting Ragam CA            => ragam-ca/dist
@@ -44,4 +45,5 @@ The repository contains three parts
     ```
     (this should be pre configured with firebase.json)
 - Build and deploy the site using `yarn deploy`
+
 </details>
