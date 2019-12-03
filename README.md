@@ -10,7 +10,7 @@ The repository contains three parts
 
 | | |
 |:-----:|:-----|
-|<img width="150" src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-built_white.png">|<img width="150" src="https://github.com/vuejs/art/raw/master/vue-badge.png">|
+|<img width="150" src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-standard.png" alt="Firebase">|<img width="150" src="https://github.com/vuejs/art/raw/master/vue-badge.png" alt="VueJS 2">|
 
 ## Stuff to be done
 ### CA Site
