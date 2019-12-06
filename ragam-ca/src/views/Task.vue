@@ -2,14 +2,13 @@
   <div class="task">
     <router-link to="/home" class="btn">◀ Back</router-link>
     <div>
-      <h2>{{ task.title }}</h2>
-      <hr />
+      <h2 class="header">{{ task.title }}</h2>
       <div class="writeup" v-html="task.description"></div>
       <br>
       <div v-if="$route.params.id === 'whatsapp'" >
         <a :href="task.groupURL" class="button whatsapp">
           <img src="../assets/icon-whatsapp.svg">
-          Click to join WhatsApp Group
+          Tap to join group
         </a>
       </div>
       <div v-if="$route.params.id === 'posters'">
@@ -94,10 +93,31 @@ form {
 }
 textarea {
   width:100%;
+  border-radius: 4px;
   padding:1em;
   min-height: 5em;
+  outline:0;
   resize:none;
   font-family: 'Lato', sans-serif;
+}
+.whatsapp.button {
+  background: #273443;
+  width:fit-content;
+  margin:auto;
+  padding: 0.5em 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+}
+.img {
+  width:200px;
+  height:200px;
+}
+h2.header{
+  margin: 0.5em 0;
+  padding: 0.5em 0;
+  border-bottom: 2px solid #fff;
 }
 </style>
 <script>
