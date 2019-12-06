@@ -15,8 +15,9 @@
       <div v-if="$route.params.id === 'posters'">
         <p class="large">URL: {{userData.posterURL || '' }}</p>
         <form @submit.prevent="updatePosterURL()">
-          <input type="text" placeholder="Enter Google Drive URL here" v-model="posterURL" required>
-          <input type="submit" value="Submit" >
+          <input class="text" placeholder="Enter Google Drive URL here"
+                  v-model="posterURL" required>
+          <input type="submit" class="button" value="Submit" >
         </form>
         <h3>Posters</h3>
         <div class="grid">
@@ -74,13 +75,30 @@
       </div>
       <div v-if="$route.params.id === 'feedback'">
         <textarea v-model="feedback" placeholder="Enter your feedback here"></textarea>
-        <input type="submit" value="Submit feedback" @click="submitFeedback()">
+        <input type="submit" class="button" value="Submit feedback" @click="submitFeedback()">
       </div>
     </div>
   </div>
 </template>
 <style >
-
+form {
+  margin: 1em 0;
+  text-align: center;
+}
+.text {
+  border:0;
+  border-radius: 4px;
+  outline: 0;
+  width:100%;
+  padding:0.5em;
+}
+textarea {
+  width:100%;
+  padding:1em;
+  min-height: 5em;
+  resize:none;
+  font-family: 'Lato', sans-serif;
+}
 </style>
 <script>
 import firebase from 'firebase/app';

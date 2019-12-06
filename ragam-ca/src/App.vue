@@ -53,6 +53,7 @@ h1, h2 {
 }
 .button {
   background: #007aff;
+  color:#fff;
   cursor: pointer;
   font-weight: bold;
   padding: 0.5em;
@@ -60,6 +61,7 @@ h1, h2 {
   margin:0.5em 0;
   border-radius: 4px;
   box-shadow: 0 0 5px #333;
+  border:0;
 }
 footer {
   margin: 1em 0;
