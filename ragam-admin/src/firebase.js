@@ -4,7 +4,7 @@ import 'firebase/database';
 import 'firebase/storage';
 import 'firebase/auth';
 import 'firebase/functions';
-
+import 'firebase/analytics';
 
 const app = firebase.initializeApp({
   apiKey: 'AIzaSyDRTSjI8HDXiLQSCOu2cY4j-ZVdFisqow8',
@@ -22,3 +22,4 @@ export const db = app.database();
 export const storage = app.storage();
 export const auth = app.auth();
 export const functions = app.functions();
+export const analytics = app.analytics();

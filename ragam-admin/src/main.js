@@ -29,7 +29,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import Buefy from 'buefy';
 import App from './App.vue';
 import router from './router';
-import { auth } from './firebase';
+import { auth, analytics } from './firebase';
 
 import 'buefy/dist/buefy.css';
 
@@ -49,7 +49,11 @@ Vue.use(Buefy, {
 });
 
 let app = '';
-auth.onAuthStateChanged(() => {
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    analytics.setUserId(user.uid);
+    analytics.setUserProperties({ level: 'ADMIN' });
+  }
   if (!app) {
     /* eslint-disable no-new */
     app = new Vue({
