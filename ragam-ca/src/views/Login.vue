@@ -21,7 +21,7 @@
     <h3>Eligibility</h3>
     <p>
       Any student currently pursuing education in an established institute who
-      wishes to participate in Ragam '19 may apply. Applicants having good interpersonal
+      wishes to participate in Ragam'20 may apply. Applicants having good interpersonal
       and communication skills with previous experience will be given preference.
     </p>
 
