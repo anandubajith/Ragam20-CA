@@ -1,23 +1,10 @@
 <template>
   <div class="position" v-if="points">
   <router-link target="_blank" to="/leaderboard">
-    <div v-if="position >= 1 && position <= 5 " class="platinum">
-      Platinum -
-      <b>{{ points }}</b> points
+    <div :class="level">
+      <span class="capitalize">{{ level }} - </span>
+        <b>{{ points || 0 }} </b> points
     </div>
-    <div v-else-if="position >= 6 && position <= 10" class="gold">
-      Gold -
-      <b>{{ points }}</b> points
-    </div>
-    <div v-else-if="position >= 11 && position <= 15 " class="silver">
-      Silver -
-      <b>{{ points }}</b> points
-    </div>
-    <div v-else-if="position >= 16 && position <= 20 " class="bronze">
-      Bronze -
-      <b>{{ points || 0 }}</b> points
-    </div>
-    <div v-else>Points: {{ points }}</div>
   </router-link>
   </div>
 </template>
@@ -32,6 +19,9 @@
 }
 .position div {
   display: inline-block;
+}
+.capitalize {
+  text-transform: capitalize;
 }
 .platinum {
   background: #4CD964;
@@ -54,5 +44,14 @@
 export default {
   name: 'Badge',
   props: ['position', 'points'],
+  computed: {
+    level() {
+      if (this.position >= 1 && this.position <= 5) { return 'platinum'; }
+      if (this.position >= 6 && this.position <= 10) return 'gold';
+      if (this.position >= 11 && this.position <= 15) return 'silver';
+      if (this.position >= 16 && this.position <= 20) return 'bronze';
+      return '';
+    },
+  },
 };
 </script>
