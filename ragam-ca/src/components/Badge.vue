@@ -1,5 +1,6 @@
 <template>
-  <div class="position">
+  <div class="position" v-if="points">
+  <router-link target="_blank" to="/leaderboard">
     <div v-if="position >= 1 && position <= 5 " class="platinum">
       Platinum -
       <b>{{ points }}</b> points
@@ -17,6 +18,7 @@
       <b>{{ points || 0 }}</b> points
     </div>
     <div v-else>Points: {{ points }}</div>
+  </router-link>
   </div>
 </template>
 <style>
