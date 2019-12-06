@@ -34,18 +34,18 @@
   display: inline-block;
 }
 .platinum {
-  background: #777;
+  background: #4CD964;
   color: #fff;
   font-weight: bold;
 }
 .gold {
-  background-color: #c9b037;
+  background-color: #FFCC00;
 }
 .silver {
-  background-color: #d7d7d7;
+  background-color: #C7C7CC;
 }
 .bronze {
-  background-color: #ad8a56;
+  background-color: #FF9500;
   color: #fff;
 }
 
