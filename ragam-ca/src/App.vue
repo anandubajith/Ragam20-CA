@@ -47,9 +47,13 @@ header {
 header a {
   border: 0;
 }
-h1, h2 {
+h1, h2, h3 {
   font-weight: bold;
   font-size:1.5em;
+}
+h3 {
+  font-size: 1.2em;
+  margin-top: 0.5em;
 }
 .button {
   background: #007aff;
