@@ -1,150 +1,87 @@
 <template>
   <div class="home">
-     <div class="dashboard">
-    <div class="summary">
-      <div class="text">
-        <h2>{{ userData.name }}</h2>
-        <div>College: {{ userData.college}}</div>
-        <Badge :points="totalPoints" :position="position"/>
-        <router-link to="/leaderboard" class="button">Leaderboard</router-link>
-        <a class="logout button" href="#" @click="logout()">Logout</a>
-      </div>
-      <img class="profile" :src="photo" alt />
+    <div class="stats">
+        <img class="profile" :src="photo" alt />
+        <div class="">
+           <h2>{{ userData.name }}</h2>
+          <span class="college">{{ userData.college}}</span>
+          <Badge :points="totalPoints" :position="position"/>
+          <!-- <router-link to="/leaderboard" class="button">Leaderboard</router-link>
+          <a class="logout button" href="#" @click="logout()">Logout</a> -->
+        </div>
     </div>
-    <hr />
+    <div class="referral" v-if="tasks.referrals && tasks.referrals.active">
+      <div class="button"
+           v-clipboard:copy="userData.ref_id"
+           v-clipboard:success="onCopy">
+        <span style="font-weight:normal">Referral Code :</span>
+          {{ userData.ref_id }}
+      </div>
+    </div>
     <div class="notification" v-if="notification.message">
       {{ notification.message }}
     </div>
-    <hr v-if="notification.message">
-    <div class="referral_code" v-if="tasks.referrals && tasks.referrals.active">
-      <div class="referral" v-clipboard:copy="userData.ref_id"
-              v-clipboard:success="onCopy">
-        <h2 style="text-align:center">
-          <span style="font-weight:normal">Referral Code :</span>
-          {{ userData.ref_id }}
-        </h2>
-      </div>
-      <hr />
-    </div>
     <div class="tasks">
-      <h2>Tasks</h2>
-      <router-link class="poster-btn" to="/task/whatsapp"
+      <router-link class="button" to="/task/whatsapp"
                     v-if="tasks.whatsapp && tasks.whatsapp.active">
-        Task #1: <b>Join WhatsApp group</b>
+        <div class="subtitle">task 1</div>
+        <div class="title">Join WhatsApp Group</div>
       </router-link>
-      <router-link class="poster-btn" to="/task/posters"
+      <router-link class="button" to="/task/posters"
                   v-if="tasks.posters && tasks.posters.active">
-        Task #2: <b>Posters</b>
+         <div class="subtitle">task 2</div>
+        <div class="title">Share posters</div>
       </router-link>
-      <router-link class="poster-btn" to="/task/referrals"
+      <router-link class="button" to="/task/referrals"
                   v-if="tasks.referrals && tasks.referrals.active">
-        Task #3: <b>Referrals</b>
+         <div class="subtitle">task 3</div>
+        <div class="title">Refer people</div>
       </router-link>
-      <router-link class="poster-btn" to="/task/feedback"
+      <router-link class="button" to="/task/feedback"
                 v-if="tasks.feedback && tasks.feedback.active">
-        Task #4: <b>Feedback</b>
+         <div class="subtitle">task 4</div>
+        <div class="title">Feedback</div>
       </router-link>
     </div>
-  </div>
   </div>
 </template>
-<style scoped>
-button {
-  display: block;
-  margin: 0 auto;
-  background: tomato;
-  color: #fff;
-  border-radius: 10px;
-  padding: 1em;
-  outline: 0;
-  border: 0;
-  box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
-}
-.poster-btn {
-  display: block;
-  background: #eee;
-  padding: 1em;
-  margin-bottom:1em;
-  border-radius: 4px;
-  text-decoration: none;
-  color: #000;
-}
-.tasks a {
-  display: block;
-}
-.summary {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+<style>
+.stats {
+  margin: 1em 0;
+  display:flex;
+  justify-content:center;
+  align-items: center;
 }
 .profile {
   border-radius: 100%;
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 7.5em;
+  padding-right: 1em;
 }
-.text {
-  /* text-align: center; */
-  flex: 1;
-}
-.button {
-  display: inline-block;
-  margin-top: 1em;
-  margin-right: 1em;
-  background: cornflowerblue;
-  color: #fff;
-  text-decoration: none;
-  padding: 0.2em;
-  border-radius: 3px;
-}
-.logout {
-  background: tomato;
+.college {
+  color: #777;
 }
 .referral {
   text-align: center;
-  cursor:pointer;
+  padding:1em 0;
 }
-.referral h2 {
-  background: linear-gradient(45deg, #e2336e 0%, #7537e7 100%);
-  display: inline;
-  color: #fff;
-  border-radius: 5px;
-  padding: 0.5em;
-  margin: auto;
+.tasks .button {
+  display:block;
+  font-weight: normal;
+  border: 0;
+  background: #333;
 }
-.text h2 {
-  margin: 0;
+.subtitle {
+  color: #888;
+  font-size: 0.8em;
 }
-.tasks button {
-  display: block;
-  padding: 1em;
-  margin: 1em auto;
+.title {
+  font-weight: bold;
 }
-hr {
-  background-color: #f5f5f5;
-  border: none;
-  display: block;
-  height: 2px;
-  margin: 1.5rem 0;
-}
-/* .task {
-  padding: 1em;
-} */
-.task p {
-  margin-top: 0;
-}
-/* .task .message {
-  flex: 1;
-} */
-.status {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@media screen and (max-width: 600px) {
-  .v--modal-box.v--modal {
-    max-width: 100vh !important;
-  }
+.notification {
+  margin-bottom:1em;
+  background: #ff2d55;
+  border-radius: 4px;
+  padding:1em;
 }
 </style>
 <script>
@@ -209,14 +146,6 @@ export default {
     },
   },
   methods: {
-    logout() {
-      firebase
-        .auth()
-        .signOut()
-        .then(() => {
-          this.$router.replace('login');
-        });
-    },
     onCopy() {
       // eslint-disable-next-line
       alert('Referral Code copied');

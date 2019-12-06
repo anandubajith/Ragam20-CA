@@ -20,30 +20,7 @@
   </div>
 </template>
 <style scoped>
-table {
-  width: 100%;
-  border: 1px solid #eee;
-  line-height: 1.4;
-  border-collapse: collapse;
-}
-.bold {
-    font-weight: bold;
-}
-thead {
-    font-weight: bold;
-    text-align: left;
-     background: #eee;
-    text-transform: uppercase
-}
 
-.center {
-    text-align: center;
-}
-
-td,th {
-    padding: .5em;
-    border-bottom: 1px solid #f2f2f2
-}
 </style>
 <script>
 import firebase from 'firebase/app';

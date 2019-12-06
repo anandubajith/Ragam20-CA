@@ -2,7 +2,7 @@
   <div id="app">
     <header>
       <router-link to="/home">
-        <h1>Ragam'20</h1>
+        <img src="./assets/logo.png" class="logo" alt="Ragam'20">
       </router-link>
     </header>
     <div class="container">
@@ -11,71 +11,76 @@
       </transition>
     </div>
     <footer>
-      <router-link to="/about"> About</router-link>
+      <router-link to="/about">about</router-link>
       &middot;
-      <a href="http://ragam.org.in/" target="_blank" rel="noopener noreferrer">Contact</a>
+      <a href="http://ragam.org.in/" target="_blank" rel="noopener noreferrer">contact</a>
+      <br>
+      <a href="#" @click="logout()" v-if="$route.path != '/login'">
+        logout
+      </a>
     </footer>
   </div>
 </template>
 
 <style>
-* {
-  box-sizing: border-box;
-}
-html {
-  min-height: 100%;
-}
+@import url(../node_modules/minireset.css/minireset.min.css);
 body {
-  padding:1em;
-  /* background: linear-gradient(135deg, #3023ae 0%, #c86dd7 100%); */
   background: #000;
-  min-height: 100%;
-  margin: 0;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  font-family: "Open sans", sans-serif;
+  color:#fff;
+  font-family: 'Lato', sans-serif;
+  max-width: 30em;
+  padding:1em;
+  margin: auto;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+}
+.logo {
+  width: 5em;
 }
 header {
-  height: 100%;
-  padding: 1em;
-  color: #fff;
-  text-align: center;
-  font-size: 1.5em;
-}
-header h1 {
-  margin: 0;
-  font-weight: normal;
+  display: flex;
+  justify-content: center;
 }
 header a {
-  text-decoration: none;
-  color:#fff;
+  border: 0;
 }
-.container {
-  background: #fff;
-  padding: 3em 6em;
-  width: 100%;
-  margin: auto;
-  max-width: 750px;
-  border-radius: 10px;
+h1, h2 {
+  font-weight: bold;
+  font-size:1.5em;
 }
-@media screen and (max-width: 600px) {
-  .container {
-    padding: 2em;
-  }
+.button {
+  background: #007aff;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5em;
+  display:inline-block;
+  margin:0.5em 0;
+  border-radius: 4px;
+  box-shadow: 0 0 5px #333;
 }
-
-
 footer {
-  text-align:center;
-  padding:1em 0;
-  color:#fff;
-}
-footer a {
-  text-decoration: none;
-  color: #fff;
-  transition: 0.1s ease-in all;
-}
-footer a:hover {
-  border-bottom:1px solid #fff;
+  margin: 1em 0;
+  text-align: center;
 }
 </style>
+<script>
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
+export default {
+  name: 'App',
+  methods: {
+    logout() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.replace('login');
+        });
+    },
+  },
+};
+</script>

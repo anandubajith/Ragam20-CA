@@ -68,65 +68,7 @@
   </div>
 </template>
 <style >
-.register h2 {
-  margin: 0;
-}
-.register img {
-  border-radius: 100%;
-  display: block;
-  max-width: 200px;
-  margin: 2em auto;
-}
-.input {
-  background: #eee;
-}
-.register input,
-select,
-.input {
-  width: 100%;
-  outline: 0;
-  border: 1px solid #999;
-  margin: 0.5em 0;
-  padding: 1em;
-  border-radius: 6px;
-}
-input[type="submit"] {
-  width: auto;
-  display: block;
-  margin: 1em auto;
-  background: #3023ae;
-  text-transform: uppercase;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 10px;
-  padding: 1em 2em;
-  outline: 0;
-  border: 0;
-  box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
-  transition: 0.2s ease-in all;
-}
 
-input[type="submit"]:hover {
-  box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
-}
-
-@media screen and (max-width: 600px) {
-  .register img {
-    margin: 1em auto;
-    max-width: 160px;
-  }
-}
-
-.row {
-  display: flex;
-}
-.column {
-  flex: 1;
-  text-align: center;
-}
-.column input {
-  display: inline-block;
-}
 </style>
 <script>
 import firebase from 'firebase/app';

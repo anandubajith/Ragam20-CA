@@ -7,7 +7,7 @@
       <div class="writeup" v-html="task.description"></div>
       <br>
       <div v-if="$route.params.id === 'whatsapp'" >
-        <a :href="task.groupURL" class="whatsapp">
+        <a :href="task.groupURL" class="button whatsapp">
           <img src="../assets/icon-whatsapp.svg">
           Click to join WhatsApp Group
         </a>
@@ -80,104 +80,7 @@
   </div>
 </template>
 <style >
-ul {
-  padding-inline-start: 20px;
-}
-.btn {
-  text-decoration: none;
-  color: #000;
-  border: 1px solid #eee;
-  padding: 10px;
-}
-.btn:hover {
-  background: #eee;
-}
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  text-align: center;
-}
-textarea {
-  width:100%;
-  padding:1em;
-  font-family:sans-serif;
-  outline:0;
-  resize: none;
-  max-width:100%;
-  min-height: 6em;
-  border:2px solid #666;
-  border-radius: 4px;
-}
-textarea:focus {
-  border: 2px solid #000;
-}
-.whatsapp {
-  display:flex;
-  flex-direction:column;
-  width:fit-content;
-  margin:auto;
-  align-items:center;
-  border-radius: 4px;
-  color: #fff;
-  text-decoration: none;
-  background:#455a64;
-  padding:1em;
-}
-@media screen and (max-width: 540px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-.poster {
-  padding: 1em;
-}
-.poster p {
-  margin-bottom: 0;
-}
-.capital {
-  text-transform: capitalize;
-  color: #888;
-}
-.grid .img {
-  width: 200px;
-  margin: auto;
-  height: 300px;
-  background-size: cover;
-  background-position: 50% 50%;
-}
-.large {
-  word-break: break-all;
-  margin-top: 1em;
-  font-size: 1.3em;
-  color: #3023ae;
-}
-input{
-  width: 100%;
-  outline: 0;
-  border: 1px solid #999;
-  margin: 0.5em 0;
-  padding: 1em;
-  border-radius: 6px;
-}
-input[type="submit"] {
-  width: auto;
-  display: block;
-  margin: 1em auto;
-  background: #3023ae;
-  text-transform: uppercase;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 10px;
-  padding: 1em 2em;
-  outline: 0;
-  border: 0;
-  box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
-  transition: 0.2s ease-in all;
-}
 
-input[type="submit"]:hover {
-  box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
-}
 </style>
 <script>
 import firebase from 'firebase/app';
