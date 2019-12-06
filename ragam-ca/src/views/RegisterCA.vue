@@ -1,44 +1,56 @@
 <template>
   <div>
     <div class="register" v-if="!success">
-      <h2 class="is-size-3">Please fill in your details</h2>
-      <img :src="photo" />
+      <h2 class="header">Please fill in your details</h2>
+      <img :src="photo" class="profile">
       <form v-on:submit.prevent="addCA" autocomplete="off">
+        <div class="field">
         <label for="Name">Name</label>
         <input
           placeholder="Enter your name"
           name="Name"
           type="text"
+          class="text-input"
           autocomplete="off"
           v-model="name"
           required
         />
+        </div>
+        <div class="field">
         <label for="College">College</label>
         <input
           placeholder="Enter your college name"
           type="text"
+          class="text-input"
           name="College"
           autocomplete="off"
           v-model="college"
           required
         />
-        <label for="Branch">Branch</label>
-        <input
-          placeholder="Enter your Branch"
-          type="text"
-          name="Branch"
-          autocomplete="off"
-          v-model="branch"
-          required
-        />
-        <label for="Year">Year</label>
-        <select v-model="year">
-          <option value selected disabled>Select your year</option>
-          <option value="first">First</option>
-          <option value="second">Second</option>
-          <option value="third">Third</option>
-          <option value="fourth">Fourth</option>
-        </select>
+        </div>
+        <div class="field">
+          <label for="Branch">Branch</label>
+          <input
+            placeholder="Enter your Branch"
+            type="text"
+            class="text-input"
+            name="Branch"
+            autocomplete="off"
+            v-model="branch"
+            required
+          />
+        </div>
+        <div class="field">
+          <label for="Year">Year</label>
+          <select v-model="year">
+            <option value selected disabled>Select your year</option>
+            <option value="first">First</option>
+            <option value="second">Second</option>
+            <option value="third">Third</option>
+            <option value="fourth">Fourth</option>
+          </select>
+        </div>
+        <div class="field">
         <label for="Experience">Have you been a Campus ambassador before?</label>
         <div class="row">
           <div class="column">
@@ -48,18 +60,24 @@
             <input type="radio" name="experience" v-model="experience" value="no" checked /> No
           </div>
         </div>
+        </div>
+        <div class="field">
         <label for="Email">Email</label>
-        <div class="input">{{ this.email }}</div>
-        <label for="Phone">Phone</label>
+        <div class="text-input">{{ this.email }}</div>
+        </div>
+        <div class="field">
+        <label for="Phone">WhatsApp number</label>
         <input
-          placeholder="Enter your phone number."
+          placeholder="Enter your WhatsApp number."
           name="Phone"
           type="tel"
+          class="text-input"
           autocomplete="off"
           v-model="phone"
           required
         />
-        <input type="submit" value="Register" />
+        </div>
+        <input type="submit" class="button" value="Register" />
       </form>
     </div>
     <div class="success" v-if="success">
@@ -67,8 +85,40 @@
     </div>
   </div>
 </template>
-<style >
-
+<style scoped>
+.profile {
+  display: block;
+  margin: auto;
+  padding:0;
+}
+form {
+  text-align: left;
+}
+.row {
+  display:flex;
+}
+.field {
+  margin: 0.5em 0;
+}
+label {
+  display:block;
+  margin-bottom: 0.25em;
+}
+select {
+  padding: 0.5em;
+  width:100%;
+  border:0;
+  border-radius: 4px;
+  background:#fff;
+}
+div.text-input {
+  background:#eee;
+  color: #999;
+  user-select:none;
+}
+.column {
+  margin-right: 1em;
+}
 </style>
 <script>
 import firebase from 'firebase/app';

@@ -75,6 +75,13 @@ footer {
 .is-unselectable {
   user-select: none;
 }
+.text-input {
+  border:0;
+  border-radius: 4px;
+  outline: 0;
+  width:100%;
+  padding:0.5em;
+}
 </style>
 <script>
 import firebase from 'firebase/app';

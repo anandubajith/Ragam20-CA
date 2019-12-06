@@ -14,7 +14,7 @@
       <div v-if="$route.params.id === 'posters'">
         <p class="large">URL: {{userData.posterURL || '' }}</p>
         <form @submit.prevent="updatePosterURL()">
-          <input class="text" placeholder="Enter Google Drive URL here"
+          <input class="text-input" placeholder="Enter Google Drive URL here"
                   v-model="posterURL" required>
           <input type="submit" class="button" value="Submit" >
         </form>
@@ -82,13 +82,6 @@
 form {
   margin: 1em 0;
   text-align: center;
-}
-.text {
-  border:0;
-  border-radius: 4px;
-  outline: 0;
-  width:100%;
-  padding:0.5em;
 }
 textarea {
   width:100%;
