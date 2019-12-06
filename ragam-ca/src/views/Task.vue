@@ -1,9 +1,9 @@
 <template>
   <div class="task">
-    <router-link to="/home" class="btn">◀ Back</router-link>
+    <router-link to="/home" class="button grey">◀ back</router-link>
     <div>
-      <h2 class="header">{{ task.title }}</h2>
-      <div class="writeup" v-html="task.description"></div>
+      <h2 class="header is-unselectable">{{ task.title }}</h2>
+      <div class="writeup is-unselectable" v-html="task.description"></div>
       <br>
       <div v-if="$route.params.id === 'whatsapp'" >
         <a :href="task.groupURL" class="button whatsapp">
@@ -18,7 +18,8 @@
                   v-model="posterURL" required>
           <input type="submit" class="button" value="Submit" >
         </form>
-        <h3>Posters</h3>
+        <h2>Posters</h2>
+        <br>
         <div class="grid">
           <div class="poster" v-for="(poster, key) in task.posters" :key="key">
             <div class="img" :style="`background-image:url(${poster.image}`" />
@@ -27,8 +28,6 @@
             </p>
             <a :href="poster.image" target="_blank">Download Poster</a>
             <br />
-            <a :href="poster.image2" v-if="poster.image2" target="_blank">Download Poster 2</a>
-            <br v-if="poster.image2" />
             <a
               :href="'#'+key"
               v-clipboard:copy="poster.writeup"
@@ -110,14 +109,29 @@ textarea {
   align-items:center;
   justify-content: center;
 }
-.img {
-  width:200px;
-  height:200px;
-}
-h2.header{
+
+h2.header {
   margin: 0.5em 0;
   padding: 0.5em 0;
   border-bottom: 2px solid #fff;
+}
+.grey {
+  background: #333;
+  font-size: 0.8em;
+  margin-bottom:0;
+}
+.grid {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
+.img {
+  max-width:100%;
+  width:200px;
+  height:300px;
+}
+.poster {
+  padding: 1em 0;
+  text-align:center;
 }
 </style>
 <script>

@@ -62,10 +62,14 @@ h1, h2 {
   border-radius: 4px;
   box-shadow: 0 0 5px #333;
   border:0;
+  user-select: none;
 }
 footer {
   margin: 1em 0;
   text-align: center;
+}
+.is-unselectable {
+  user-select: none;
 }
 </style>
 <script>
