@@ -3,7 +3,7 @@
     <h1>Register as Campus Ambassador</h1>
     <p>Register here and become a Ragam'20 ambassador to promote events</p>
     <button class="button login-btn" @click="socialLogin">
-      <img src="../assets/icon-google.png" />
+      <img src="../assets/icon-google.png" alt=""/>
       <span>Sign in with Google</span>
     </button>
     <h3>Why become a CA</h3>
