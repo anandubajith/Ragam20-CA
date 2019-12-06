@@ -32,7 +32,7 @@
               :href="'#'+key"
               v-clipboard:copy="poster.writeup"
               v-clipboard:success="onCopy"
-            >Copy writeup to clipboard</a>
+            >Copy writeup</a>
             <div
               v-if="userData.posters && userData.posters[key] === '✔️' "
             >Status: ✔️ Accepted</div>
@@ -56,7 +56,7 @@
           </h2>
         </div>
         <br>
-        <h3>Your referrals</h3>
+        <h2>Your referrals</h2>
         <ul v-if="userData['referral']">
           <li v-for="(participant,key) in userData['referral']" :key="key">
             <b>{{participant.value}}</b> -
@@ -130,7 +130,8 @@ h2.header {
   height:300px;
 }
 .poster {
-  padding: 1em 0;
+  overflow:hidden;
+  padding: 0.5em;
   text-align:center;
 }
 </style>
