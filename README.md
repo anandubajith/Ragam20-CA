@@ -25,8 +25,8 @@ The repository contains three parts
 
 | | | |
 |:-------------------------:|:-------------------------:|:-------------------------:|
-|<img width="1604" src="screenshots/ca-homepage.png" alt="CA Homepage"> |  <img width="1604" src="screenshots/ca-register.png" alt="Admin Dashboard">|<img width="1604" src="screenshots/ca-dashboard.png" alt="Config page">|
-|<img width="1604" src="screenshots/ca-task.png" alt="Admin login mobile"> Admin Login Page Mobile  |  <img width="1604" src="screenshots/admin-dashboard-mobile.png" alt="Full page screenshot of mobile dashboard" >|<img width="1604" src="screenshots/admin-manageposter-mobile.png" alt="Manage Poster Screen" >|
+|<img width="1604" src="screenshots/ca-homepage.png" alt="CA Homepage"> |  <img width="1604" src="screenshots/ca-register.png" alt="CA Register">|<img width="1604" src="screenshots/ca-dashboard.png" alt="CA Dashboard">|
+| |<img width="1604" src="screenshots/ca-task.png" alt="CA TAsk view"> | |
 </details>
 
 ## Deploying
