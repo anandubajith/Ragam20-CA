@@ -15,7 +15,7 @@
       &middot;
       <router-link to="/contact">contact</router-link>
       <br>
-      <a href="#" @click="logout()" v-if="$route.path != '/login'">
+      <a href="#" @click="logout()" v-if="$route.path === '/home'">
         logout
       </a>
     </footer>
