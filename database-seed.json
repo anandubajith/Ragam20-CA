@@ -1,0 +1,32 @@
+{
+  "ambassadors" : { },
+  "leaderboard" : [ ],
+  "notification" : {
+    "message" : ""
+  },
+  "points" : { },
+  "tasks" : {
+    "feedback" : {
+      "active" : false,
+      "description" : "asdf",
+      "title" : "Feedback"
+    },
+    "posters" : {
+      "active" : false,
+      "description" : "    <div class=\"writeup\"><strong> WhatsApp: </strong> <ul>         <li>For every group in which sharing is done, 10 points will be awarded.</li>         <li>For every fifth group in which sharing is done an additional 10 points is awarded.<br /> eg: 4 groups means             40 points and 5 groups mean 60 points.</li>         <li> For every status put up at least 10 points will be awarded.</li>         <li>For every 50 views 10 points will be awarded and for every 150 views another additional 10 points will be             awarded.<br /> eg: if your status gets<br /> 30 views you will get 10 points<br /> 50 views you will get 10             points<br /> 100 views you will get 20 points and so on<br /> 150 views you will get 30+10=40             points<br /><em> The maximum points for the above mentioned criteria is 220 points.</em></li>     </ul> <strong>Instagram: </strong>     <ul>         <li>For posting in Instagram as your Instagram post you will be awarded 100 points.</li>         <li>For the points to be counted the post should stay up for atleast 2 days.</li>         <li>Sharing via Instagram stories has the same point structure as sharing via WhatsApp status.<br /><em>The                 maximum points will be 240 points for Instagram story.</em></li>     </ul> <strong> Facebook: </strong>     <ul>         <li>For posting in Facebook as your Facebook post you will be awarded 100 points.</li>         <li>For the points to be counted the post should stay up for atleast 2 days.</li>     </ul> <br />     <strong>Guidelines</strong> <br /> Create a Google drive folder named [YOUR_NAME]. <br /> For each     poster, upload the screenshots of the completed task into a folder within it named [YOUR_NAME]_[POSTER_NAME]. <br />     Submit the link to the main folder in the column below. <br /> </div><br>",
+      "posters" : { },
+      "title" : "Posters"
+    },
+    "referrals" : {
+      "active" : false,
+      "description" : "<div class=\"writeup\"> <p>     Refer friends to Ragam Events, Workshops and Lectures using your unique referral code to receive points. </p> <ul>     <li><b>Registration</b> - 1000 <i>points per person</i></li>     <li><b>Workshop</b> - 2000 <i>points per person</i></li>     <li><b>Lecture</b> - 1500 <i>points per person</i></li>     <li><b>Event</b> - 1250 <i>points per person</i></li>     <li><b>Robotics Event</b> - <i>1750 points per person</i></li> </ul> </div>",
+      "title" : "Referrals"
+    },
+    "whatsapp" : {
+      "active" : true,
+      "description" : "Join the official CA Whatsapp group and get assigned a mentor",
+      "groupURL" : "https://api.whatsapp.com/",
+      "title" : "Join Whatsapp Group"
+    }
+  }
+}
