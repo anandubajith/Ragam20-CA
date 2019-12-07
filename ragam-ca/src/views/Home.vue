@@ -52,6 +52,9 @@
   justify-content:center;
   align-items: center;
 }
+.stats h2 {
+  font-size: 1.5em;
+}
 .profile {
   border-radius: 100%;
   max-width: 7.5em;

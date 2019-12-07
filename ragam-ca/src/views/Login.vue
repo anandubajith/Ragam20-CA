@@ -16,9 +16,7 @@
     </ul>
     <h3>Benefits</h3>
     <ul>
-      <li> one</li>
-      <li> two</li>
-      <li> three</li>
+      <li> Benefits worth 30K and Goodies</li>
       </ul>
     <h3>Responsibilities</h3>
     <ul>
@@ -45,7 +43,7 @@
 
     </div>
 </template>
-<style>
+<style scoped>
 .login-btn {
   color: #555;
   margin:1em auto;
@@ -57,6 +55,11 @@
 }
 .login-btn img {
   margin-right: 1em;
+}
+h1,h2,h3{
+  margin-bottom:0.5em;
+  padding-bottom:0.5em;
+  border-bottom: 2px solid #fff;
 }
 </style>
 <script>

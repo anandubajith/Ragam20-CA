@@ -13,7 +13,7 @@
     <footer>
       <router-link to="/about">about</router-link>
       &middot;
-      <a href="http://ragam.org.in/" target="_blank" rel="noopener noreferrer">contact</a>
+      <router-link to="/contact">contact</router-link>
       <br>
       <a href="#" @click="logout()" v-if="$route.path != '/login'">
         logout
@@ -30,6 +30,7 @@ body {
   font-family: 'Lato', sans-serif;
   max-width: 30em;
   padding:1em;
+  font-size:18px;
   margin: auto;
 }
 a {
@@ -38,7 +39,7 @@ a {
   border-bottom: 1px solid #fff;
 }
 .logo {
-  width: 5em;
+  width: 4em;
 }
 header {
   display: flex;
@@ -49,10 +50,11 @@ header a {
 }
 h1, h2, h3 {
   font-weight: bold;
-  font-size:1.5em;
+  font-size:2em;
+  text-align:center;
 }
 h3 {
-  font-size: 1.2em;
+  font-size: 1.5em;
   margin-top: 0.5em;
 }
 .button {

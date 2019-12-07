@@ -6,6 +6,7 @@ import 'firebase/auth';
 import Home from '../views/Home.vue';
 import Login from '../views/Login.vue';
 import About from '../views/About.vue';
+import Contact from '../views/Contact.vue';
 import Task from '../views/Task.vue';
 import Leaderboard from '../views/Leaderboard.vue';
 import RegisterCA from '../views/RegisterCA.vue';
@@ -35,6 +36,11 @@ const routes = [
     path: '/about',
     name: 'About',
     component: About,
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact,
   },
   {
     path: '/task/:id',

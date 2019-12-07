@@ -107,6 +107,7 @@ h2.header {
   margin: 0.5em 0;
   padding: 0.5em 0;
   border-bottom: 2px solid #fff;
+  font-size:1.5em;
 }
 .grey {
   background: #333;
