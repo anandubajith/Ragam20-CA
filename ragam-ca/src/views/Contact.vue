@@ -7,7 +7,7 @@
       <a href="tel:9048198221">+91 9048198221</a>
       </div>
       <div class="person">
-        <h3>Nihal Nayeem </h3>
+        <h3>Nihal Nayeem</h3>
         <a href="tel:7012600052">+91 7012600052</a>
       </div>
     </div>
