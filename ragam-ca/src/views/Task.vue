@@ -122,6 +122,8 @@ h2.header {
   max-width:100%;
   width:200px;
   height:300px;
+  background-size: cover;
+  background-position: 50% 50%;
 }
 .poster {
   overflow:hidden;
