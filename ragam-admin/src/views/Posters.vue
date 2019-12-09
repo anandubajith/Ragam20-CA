@@ -3,10 +3,10 @@
     <div class="columns is-centered is-mobile" style="margin-bottom:2em;">
       <div class="column is-full-tablet is-half-desktop box">
         <b-field label="Add Poster">
-          <b-input v-model="title" :disabled="inProgress" placeholder="Enter Title"></b-input>
+          <b-input v-model="title" :disabled="isUploading" placeholder="Enter Title"></b-input>
         </b-field>
         <b-field label="Writeup">
-          <b-input type="textarea" :disabled="inProgress" v-model="writeup"></b-input>
+          <b-input type="textarea" :disabled="isUploading" v-model="writeup"></b-input>
         </b-field>
 
         <b-field grouped position="is-centered" group-multiline>
@@ -61,7 +61,7 @@
 import { db, storage } from '../firebase';
 
 export default {
-  name: 'Links',
+  name: 'Posters',
   data() {
     return {
       posters: '',
@@ -69,7 +69,6 @@ export default {
       image: '',
       selectedFile: [],
       writeup: '',
-      inProgress: false,
       isUploading: false,
     };
   },
@@ -78,7 +77,7 @@ export default {
   },
   methods: {
     addLink() {
-      this.inProgress = true;
+      this.isUploading = true;
       const filename = `${Date.now()}-${this.selectedFile.name}`;
       storage
         .ref('posters')
@@ -95,8 +94,7 @@ export default {
           this.title = '';
           this.writeup = '';
           this.selectedFile = [];
-          this.$toast.open('Link added successfully');
-          this.inProgress = false;
+          this.$toast.open('Poster uploaded successfully');
           this.isUploading = false;
         });
       // .catch(e => console.log(e));
