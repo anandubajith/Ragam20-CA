@@ -97,28 +97,9 @@ export default {
           this.selectedFile = [];
           this.$toast.open('Link added successfully');
           this.inProgress = false;
+          this.isUploading = false;
         });
       // .catch(e => console.log(e));
-    },
-    confirmRemoveLink(key, title) {
-      this.$dialog.confirm({
-        title: 'Delete Event',
-        message: `Are you sure you want to remove <b>${title}</b> ?`,
-        confirmText: 'Delete Link',
-        type: 'is-danger',
-        onConfirm: () => this.removeLink(key),
-      });
-    },
-    removeLink(key) {
-      db.ref('links')
-        .child(key)
-        .remove()
-        .then(() => {
-          this.$toast.open({
-            message: 'Link removed',
-            type: 'is-danger',
-          });
-        });
     },
   },
 };
