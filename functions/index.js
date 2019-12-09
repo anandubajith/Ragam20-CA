@@ -39,7 +39,7 @@ exports.leaderboard = functions.database.ref('/points').onWrite(() => {
 });
 
 function genRandomID(length) {
-    const chars = '123456789ABCEGHJKMNPRSTUVWXYZ';
+    const chars = '123456789ABCEGHKMNPRSTUVWXYZ';
     let res = '';
     for ( let i = 0; i < length; i++) {
         let pos = Math.floor(Math.random() * chars.length);
