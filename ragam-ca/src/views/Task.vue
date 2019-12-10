@@ -132,6 +132,7 @@ h2.header {
 }
 </style>
 <script>
+/* eslint-disable no-alert */
 import firebase from 'firebase/app';
 import 'firebase/database';
 import 'firebase/auth';
@@ -156,11 +157,9 @@ export default {
   },
   methods: {
     onCopy() {
-      // eslint-disable-next-line
       alert('Writeup copied');
     },
     onCopyR() {
-      // eslint-disable-next-line
       alert('Referral code copied');
     },
     submitFeedback() {
@@ -173,7 +172,8 @@ export default {
       firebase.database()
         .ref(`ambassadors/${firebase.auth().currentUser.uid}`)
         .update({ posterURL: this.posterURL })
-        .then(this.posterURL = '');
+        .then(this.posterURL = '')
+        .then(alert('Poster URL updated'));
     },
   },
 };
