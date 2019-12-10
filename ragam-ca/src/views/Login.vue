@@ -16,8 +16,20 @@
     </ul>
     <h3>Benefits</h3>
     <ul>
-      <li> Benefits worth 30K and Goodies</li>
-      </ul>
+      <li><b>First Place</b> - Prices worth 5K</li>
+      <li><b>Second Place</b> - Prices worth 4K</li>
+      <li><b>Third Place</b> - Prices worth 3K</li>
+      <li><b>Fourth Place</b> - Prices worth 1K</li>
+      <li><b>Fifth Place</b> - Prices worth 1K</li>
+      <li><b>Positions 6 to 9</b> - Prices worth 500 and goodies</li>
+      <li><b>Positions 10 to 20</b> - Attractive Goodies</li>
+      <li>Certificates for top 20 people</li>
+      <li>Certificate for those who have completed a certain tier (% of work)</li>
+      <li>
+        Extra Benefits worth 14k for excellence in work
+         (which will be awarded by <b>RAGAM PRC</b>)
+      </li>
+    </ul>
     <h3>Responsibilities</h3>
     <ul>
       <li>
