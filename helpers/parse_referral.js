@@ -21,6 +21,8 @@ function add_referral(ref_code, name, workshopName) {
             value: 2000,
           }),
       );
+
+    console.log(`${ref_code}: Added referral ${name} - ${workshopName}`);
 }
 
 
