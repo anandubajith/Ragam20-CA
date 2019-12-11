@@ -1,12 +1,12 @@
 {
   "name": "helpers",
+  "description": "Set of helper functions to manage CAs",
   "version": "1.0.0",
   "description": "",
-  "main": "group.js",
+  "private": true, 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
   "dependencies": {
     "firebase-admin": "^8.8.0"
   }
