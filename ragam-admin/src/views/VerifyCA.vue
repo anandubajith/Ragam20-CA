@@ -48,6 +48,10 @@
         <h2 class="is-size-1">{{ ambassadors.ref_id}}</h2>
       </div>
       <div class="column is-one-third">
+        <h2 class="is-size-4">Total Referrals</h2>
+        <h2 class="is-size-1">
+          {{ ambassadors.referral && Object.keys(ambassadors.referral).length || 0 }}
+        </h2>
       </div>
     </div>
     <hr />
