@@ -31,7 +31,7 @@
 import { db } from '../firebase';
 
 export default {
-  name: 'People',
+  name: 'Leaderboard',
   components: {},
   data() {
     return {
