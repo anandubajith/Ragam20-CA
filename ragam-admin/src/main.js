@@ -14,6 +14,7 @@ import {
   faEnvelope,
   faCog,
   faLock,
+  faArrowUp,
   faCalendarAlt,
   faChevronUp,
   faTasks,
@@ -23,6 +24,7 @@ import {
   faSearch,
   faExclamationCircle,
   faUpload,
+  faArrowDown,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
@@ -35,7 +37,7 @@ import 'buefy/dist/buefy.css';
 
 Vue.config.productionTip = false;
 
-library.add(faEye, faChevronDown, faTasks, faImages, faCubes, faSearch,
+library.add(faEye, faChevronDown, faTasks, faImages, faCubes, faSearch, faArrowUp, faArrowDown,
   faCalendarAlt, faChevronUp, faPhoneAlt, faExclamationCircle, faComment, faAngleRight,
   faAngleLeft, faEyeSlash, faEdit, faTrash, faEnvelope, faCog, faLock, faUpload);
 

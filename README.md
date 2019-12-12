@@ -1,9 +1,10 @@
 # Ragam'20
 
-The repository contains three parts
+The repository contains four parts
 - The main CA site (/ragam-ca)
 - The Admin site (/ragam-admin)
 - Firebase cloud functions (/functions)
+- Helper functions to manage (/helpers)
 
 ## Built With
 

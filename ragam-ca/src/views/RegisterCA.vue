@@ -81,7 +81,13 @@
       </form>
     </div>
     <div class="success" v-if="success">
-      <h1>You have registered successfully</h1>
+      <!-- <h1>You have registered successfully</h1> -->
+      <h1>Registration is now closed</h1>
+      <br>
+      <p style="text-align:center">
+        Contact <b>Umer Muqthar P</b><br>
+      <a class="button" href="tel:9048198221">+91 9048198221</a>
+      </p>
     </div>
   </div>
 </template>
@@ -137,7 +143,7 @@ export default {
       experience: '',
       photo: firebase.auth().currentUser.photoURL,
       email: firebase.auth().currentUser.email,
-      success: false,
+      success: true,
     };
   },
   methods: {
