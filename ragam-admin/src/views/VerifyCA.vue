@@ -33,9 +33,15 @@
           tag="a"
           :href="ambassadors.posterURL ? sanitizeURL(ambassadors.posterURL): '#'"
           target="_blank"
+          v-if="ambassadors.posterURL"
           type="is-primary"
           size="is-large"
         >Posters Link</b-button>
+        <b-button v-else
+          type="is-danger"
+          size="is-large">
+          Poster Link not submitted
+        </b-button>
       </div>
       <div class="column is-one-third">
         <h2 class="is-size-4">Referral Code:</h2>
