@@ -1,13 +1,10 @@
 {
   "name": "helpers",
-  "description": "Set of helper functions to manage CAs",
-  "version": "1.0.0",
-  "description": "",
-  "private": true, 
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Some helper functions",
+  "private": true,
   "dependencies": {
-    "firebase-admin": "^8.8.0"
+    "chalk": "^3.0.0",
+    "firebase-admin": "^8.8.0",
+    "node-xlsx": "^0.15.0"
   }
 }
