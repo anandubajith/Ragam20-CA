@@ -4,12 +4,13 @@
  * 
  */
 
-const DRY_RUN = true;
+const DRY_RUN = false;
 const WORKSHOP_NAME = "Industrial Automation";
 const FILE_PATH = `${__dirname}/event-attendee-list.xlsx`;
 const WORKSHOP_REFERRAL_POINTS = 2000;
 
 const admin = require("firebase-admin");
+// To be generted with generate_ref_lookup.js
 const ref_obj = require('./ref_codes.json');
 const chalk = require('chalk');
 const serviceAccount = require("./service-key.json");
