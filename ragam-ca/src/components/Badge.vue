@@ -1,5 +1,5 @@
 <template>
-  <div class="position" v-if="points">
+  <div class="position">
   <router-link target="_blank" to="/leaderboard">
     <div :class="level">
       <span class="capitalize">{{ level }} - </span>

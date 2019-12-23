@@ -21,7 +21,8 @@
         <h2>Posters</h2>
         <br>
         <div class="grid">
-          <div class="poster" v-for="(poster, key) in task.posters" :key="key">
+          <div class="poster"
+              v-for="(poster, key) in Object.values(task.posters).reverse()" :key="key">
             <div class="img" :style="`background-image:url(${poster.image}`" />
             <p>
               <b>{{ poster.title }}</b>
@@ -120,8 +121,8 @@ h2.header {
 }
 .img {
   max-width:100%;
-  width:200px;
-  height:300px;
+  min-width:200px;
+  min-height:300px;
   background-size: cover;
   background-position: 50% 50%;
 }

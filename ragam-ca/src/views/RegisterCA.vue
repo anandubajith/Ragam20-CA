@@ -143,7 +143,7 @@ export default {
       experience: '',
       photo: firebase.auth().currentUser.photoURL,
       email: firebase.auth().currentUser.email,
-      success: true,
+      success: false,
     };
   },
   methods: {

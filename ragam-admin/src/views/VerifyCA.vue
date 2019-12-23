@@ -126,7 +126,7 @@
             <div class="card-content">
               <div class="media">
                 <div class="media-content">
-                  <p class="title is-4">
+                  <p class="title is-5">
                     {{poster.title}} - {{ambassadors.posters ? ambassadors.posters[key] : '❓'}}
                   </p>
                 </div>
