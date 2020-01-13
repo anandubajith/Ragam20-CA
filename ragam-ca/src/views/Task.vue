@@ -22,7 +22,7 @@
         <br>
         <div class="grid">
           <div class="poster"
-              v-for="(poster, key) in Object.values(task.posters).reverse()" :key="key">
+              v-for="(poster, k) in posters" :key="k">
             <div class="img" :style="`background-image:url(${poster.image}`" />
             <p>
               <b>{{ poster.title }}</b>
@@ -30,22 +30,23 @@
             <a :href="poster.image" target="_blank">Download Poster</a>
             <br />
             <a
-              :href="'#'+key"
+              :href="'#'+poster.key"
               v-clipboard:copy="poster.writeup"
               v-clipboard:success="onCopy"
             >Copy writeup</a>
             <div
-              v-if="userData.posters && userData.posters[key] === '✔️' "
+              v-if="userData.posters && userData.posters[poster.key] === '✔️' "
             >Status: ✔️ Accepted</div>
             <div
               v-if="
                   userData.posters
-                   && userData.posters[key]
-                   && userData.posters[key] != '✔️'"
+                   && userData.posters[poster.key]
+                   && userData.posters[poster.key] != '✔️'"
             >
-            Status: &#10060; Rejected - {{ userData.posters[key] }}
+            Status: &#10060; Rejected - {{ userData.posters[poster.key] }}
             </div>
-            <div v-if="userData.posters && !(key in userData.posters)">Status: &#8986; Pending</div>
+            <div v-if="userData.posters && !(poster.key in userData.posters)">
+              Status: &#8986; Pending</div>
           </div>
         </div>
       </div>
@@ -104,6 +105,9 @@ textarea {
   justify-content: center;
 }
 
+.contact {
+  text-align: center;
+}
 h2.header {
   margin: 0.5em 0;
   padding: 0.5em 0;
@@ -147,6 +151,7 @@ export default {
       posterURL: '',
       points: [],
       feedback: '',
+      culSecEmail: '',
     };
   },
   firebase() {
@@ -155,6 +160,19 @@ export default {
       userData: firebase.database().ref(`ambassadors/${userId}`),
       task: firebase.database().ref(`tasks/${this.$route.params.id}`),
     };
+  },
+  computed: {
+    posters() {
+      const p = [];
+      if (this.$route.params.id === 'posters') {
+        Object.keys(this.task.posters).forEach((key) => {
+          const copy = this.task.posters[key];
+          copy.key = key;
+          p.push(copy);
+        });
+      }
+      return p.reverse();
+    },
   },
   methods: {
     onCopy() {
@@ -168,6 +186,12 @@ export default {
         .ref(`ambassadors/${firebase.auth().currentUser.uid}`)
         .update({ feedback: this.feedback })
         .then(this.feedback = '');
+    },
+    submitEmail() {
+      firebase.database()
+        .ref(`ambassadors/${firebase.auth().currentUser.uid}`)
+        .update({ culSecEmail: this.culSecEmail })
+        .then(this.culSecEmail = '');
     },
     updatePosterURL() {
       firebase.database()
