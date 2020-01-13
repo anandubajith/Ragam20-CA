@@ -14,7 +14,7 @@ db.ref('ambassadors').once("value", function(snapshot){
     let data = snapshot.val();
 
     let ref_obj = {};
-    for( uid in data) {
+    for( let uid in data) {
         let ref_code = data[uid].ref_id;
         // store the UID indexed by ref_code
         ref_obj[ref_code] = uid;

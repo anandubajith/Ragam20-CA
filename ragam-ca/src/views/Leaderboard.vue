@@ -120,11 +120,14 @@ export default {
     badge(point) {
       if (point >= 1 && point <= 5) {
         return 'platinum';
-      } if (point >= 6 && point <= 10) {
+      }
+      if (point >= 6 && point <= 10) {
         return 'gold';
-      } if (point >= 11 && point <= 15) {
+      }
+      if (point >= 11 && point <= 15) {
         return 'silver';
-      } if (point >= 16 && point <= 20) {
+      }
+      if (point >= 16 && point <= 20) {
         return 'bronze';
       }
       return '';
